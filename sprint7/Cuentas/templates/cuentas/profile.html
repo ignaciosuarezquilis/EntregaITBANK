@@ -1,0 +1,30 @@
+{% extends 'extra/layout.html' %}
+{% block content %}
+
+<!-- Profile -->
+<div class="profile">
+	<h1>Mis cuentas</h1>
+</div>
+
+<!-- Follow items -->
+<div class="follow">
+	<div>
+		<h2>
+		{% for cuenta in cuentas %}
+		Balance: {{cuenta.balance}}
+		{%if cuenta.tipo_id == 2 %}
+		u$
+		{%else%}
+		$
+		{%endif%}		 
+		Tipo: {{cuenta.tipo_id}}
+		<br>
+		<hr>
+		{% endfor %}
+		</h2>
+	</div>
+</div>
+
+
+<!-- block super -->
+{% endblock %}

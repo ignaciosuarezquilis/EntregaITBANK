@@ -1,0 +1,23 @@
+{% extends 'extra/layout.html' %}
+
+{% block content %}
+<h1>Solicitar un prestamo</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <select class="form-select mb-4" aria-label="Default select example" name="tipo" required>
+        {% for tipo in tipos %}
+            <option value="{{ tipo.id }}">{{ tipo.nombre }}</option>
+        {% endfor %}
+    </select>
+      <div>Fecha de inicio</div>
+      <input type="date" id="form2Example28" class="form-control form-control-lg" name="fecha" required/>
+    </div>
+    <div class="form-outline mb-4">
+      <input type="number" min="0" step="any" id="form2Example28" class="form-control form-control-lg" name="monto" required/>
+      <label class="form-label" for="form2Example28">Monto</label>
+  </div>
+    <button type="submit" class="btn btn-primary">Solicitar</button>
+</form>
+{% endblock %}
