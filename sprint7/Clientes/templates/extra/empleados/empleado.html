@@ -1,0 +1,26 @@
+{% extends 'extra/layout.html'%}
+
+{% block barra %}
+{% endblock barra %}
+
+{%block content%}
+
+<h1>Cuenta Empleado</h1>
+<hr>
+<ul>
+    <h2 class="username">Bienvenido {{user.username}}!</h2>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'sucursalesprestamos' %}" >Obtener prestamos de una sucursal</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link"  href="{% url 'tarjetas'%}">Obtener tarjetas de un cliente</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'prestamos' %}">Generar o anular prestamo de un cliente</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'direcciones' %}">Modificar direccion de un cliente</a>
+    </li>
+</ul>
+{% endblock %}

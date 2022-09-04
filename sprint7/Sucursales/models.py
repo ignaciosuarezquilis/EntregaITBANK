@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class Sucursales(models.Model):
+class Sucursal(models.Model):
     id = models.IntegerField(primary_key=True,
                              editable=False,
                              )

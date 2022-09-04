@@ -3,6 +3,8 @@ import locale
 
 from django.db import models
 
+from Sucursales.models import Sucursal
+
 
 # Create your models here.
 
@@ -18,8 +20,9 @@ class TipoPrestamo(models.Model):
 
 class Prestamo(models.Model):
     id = models.AutoField(primary_key=True)
+    sucursal = models.ForeignKey(Sucursal, on_delete=models.CASCADE, default=None, null=True)
     tipo = models.ForeignKey(TipoPrestamo, on_delete=models.CASCADE, default=None, null=True)
-    cliente = models.ForeignKey('auth.User', on_delete=models.CASCADE, default=None, null=True)
+    user_id = models.ForeignKey('auth.User', on_delete=models.CASCADE, default=None, null=True)
     date = models.DateField(default=datetime.date.today)
     total = models.FloatField(default=0)
 

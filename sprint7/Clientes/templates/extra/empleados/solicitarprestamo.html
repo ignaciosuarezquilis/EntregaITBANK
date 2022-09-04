@@ -1,0 +1,11 @@
+{% extends 'extra/layout.html' %}
+
+{% block content %}
+<h1>Solicitar un prestamo para un cliente</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" name="Submit">
+    <!--<a class="btn btn-success btn-info" href="{% url 'solicitarprestamo' %}">Solicitar prestamo</a>-->
+</form>
+{% endblock %}

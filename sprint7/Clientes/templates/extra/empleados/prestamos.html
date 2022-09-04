@@ -1,0 +1,23 @@
+{% extends 'extra/layout.html'%}
+
+{% block barra %}
+{% endblock barra %}
+
+{%block content%}
+
+<h1>Cuenta Empleado</h1>
+<hr>
+<ul>
+    <h2 class="username">Manejar prestamos</h2>
+    <table class="table table-sm">
+        <td><a class="btn btn-primary btn-info" href="{% url 'solicitarprestamosform' %}">Solicitar un prestamo</a></td>
+        {% for prestamo in prestamos %}
+        <tr>
+            <td>Id usuario: {{prestamo.user_id}}</td>
+            <td>Fecha del prestamo: {{prestamo.date}}</td>
+            <td>Suma prestada: {{prestamo.total}}$</td>
+            <td><a class="btn btn-danger btn-info" href="{% url 'eliminarprestamo' pk=prestamo.id %}">Anular prestamo</a></td>
+        </tr>
+        {% endfor %}   
+</ul>
+{% endblock %}

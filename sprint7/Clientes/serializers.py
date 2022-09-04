@@ -1,4 +1,6 @@
 from rest_framework import serializers
+
+from Prestamos.models import Prestamo
 from .models import Cliente
 from django.contrib.auth.models import User
 

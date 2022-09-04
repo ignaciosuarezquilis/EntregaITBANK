@@ -2,6 +2,9 @@ from django.contrib.auth.models import User
 from django.db import models
 
 
+
+
+
 # Create your models here.
 class Cliente(models.Model):
     id = models.IntegerField(primary_key=True,
@@ -33,6 +36,7 @@ class TipoCliente(models.Model):
 
 class Empleado(models.Model):
     employee_id = models.AutoField(primary_key=True)
+    user = models.OneToOneField(User, default=None, null=True, on_delete=models.CASCADE)
     employee_name = models.TextField()
     employee_surname = models.TextField()
     employee_hire_date = models.TextField()
@@ -41,3 +45,4 @@ class Empleado(models.Model):
 
     class Meta:
         db_table = 'empleado'
+

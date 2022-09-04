@@ -1,0 +1,20 @@
+{% extends 'extra/layout.html'%}
+
+{% block barra %}
+{% endblock barra %}
+
+{%block content%}
+
+<h1>Cuenta Empleado</h1>
+<hr>
+<ul>
+    <h2 class="username">Obtener prestamos de una sucursal</h2>
+    <table class="table table-sm">
+        {% for sucursal in sucursales %}
+        <tr>
+            <td>{{sucursal.nombre}}</td>
+            <td><a class="btn btn-primary btn-info" href="{% url 'prestamosxsucursal' pk=sucursal.id %}">Ver prestamos</a></td>
+        </tr>
+        {% endfor %}   
+</ul>
+{% endblock %}

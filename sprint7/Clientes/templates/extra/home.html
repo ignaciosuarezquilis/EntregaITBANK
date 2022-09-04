@@ -1,5 +1,20 @@
 {% extends 'extra/layout.html' %}
 
+{% block barra %}
+<li class="nav-item">
+    <a href="{% url 'accounts' pk=user.id%}">Mis cuentas</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'tarjetasxcliente' pk=user.id%}" >Mis tarjetas</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link"  href="{% url 'myloans' pk=user.id %}">Mis prestamos</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'loans' %}">Solicitar prestamo</a>
+</li>
+{% endblock barra %}
+
 {% block content %}
 <article>
     <div class="container-article">
@@ -8,8 +23,8 @@
             <h2 class="username"><a href="#">Bienvenido {{user.username}}!</a></h2>
             <h2>Cliente {{nombretipocliente}}</h2>
             <i class="clock"></i>
-            <time data-time="#">5 seconds ago</time>
-            <div class="post">Hello, Gotham!</div>
+            <button type="button" class="btn btn-primary text-white"  ><a class="text-white" href="{% url 'infocliente' pk=user.id %}">Solicitar informacion de cliente</a></button>
+            <button type="button" class="btn btn-primary text-white"  ><a class="text-white" href="{% url 'direccionesxcliente' pk=user.id %}">Modificar direccion</a></button>
         </div>
     </div>
 </article>
