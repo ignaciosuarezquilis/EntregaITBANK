@@ -8,6 +8,8 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import permissions
 
+from Direcciones.models import Direccion
+
 
 from .serializers import ClienteSerializer
 from Prestamos.serializers import PrestamoSerializer
@@ -56,8 +58,8 @@ def tarjetas(request):
 
 def direcciones(request):
     context={}
-    clientes=Cliente.objects.all()
-    context['clientes']=clientes
+    direcciones=Direccion.objects.all()
+    context['direcciones']=direcciones
     return render(request,'extra/empleados/direcciones.html',context)
 
 def prestamos(request):

@@ -10,10 +10,10 @@
 <ul>
     <h2 class="username">Modificar direccion de un cliente</h2>
     <table class="table table-sm">
-        {% for cliente in clientes %}
+        {% for direccion in direcciones %}
         <tr>
-            <td>Id usuario:{{cliente.user_id}}</td>
-            <td><a class="btn btn-primary btn-info" href="{% url 'direccionesxcliente' pk=user.id %}">Modificar Direccion</a></td>
+            <td>Id usuario:{{direccion.user}}</td>
+            <td><a class="btn btn-primary btn-info" href="{% url 'modificardireccion' pk=direccion.id %}">Modificar Direccion</a></td>
         </tr>
         {% endfor %}   
 </ul>

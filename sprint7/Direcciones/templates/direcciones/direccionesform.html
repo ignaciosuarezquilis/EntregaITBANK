@@ -1,0 +1,17 @@
+{% extends 'extra/layout.html'%}
+
+{% block barra %}
+{% endblock barra %}
+
+{%block content%}
+
+<h1>Cuenta Empleado</h1>
+<hr>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" name="Submit">
+</form>
+
+{% endblock %}
